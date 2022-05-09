@@ -1,0 +1,61 @@
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	}
+
+	@mixin keysShadow{
+		border-radius: 5px;
+		background: linear-gradient(145deg, #ae99df, #ffffff);
+		box-shadow:  3px 3px 14px #d9d9d9, -3px -3px 14px #ffffff;
+	  }
+	  
+.container{
+	margin: 0 auto;
+	width: 800px;
+	padding-top: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	
+	.textarea{
+		border: solid rgb(138, 117, 165) 4px;
+		min-height: 200px;
+		width: 100%;
+	}
+	.keyboard{
+		border: solid rgb(95, 94, 160) 4px;
+		border-radius: 5px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		
+		.row{
+			display: flex;
+			justify-content: space-between;
+		
+			.keyboard-key{
+				cursor: pointer;
+				user-select: none;
+			  
+				@include keysShadow;
+			  
+				padding: 10px 16px;
+				transition: 0.1s;
+				&:hover{
+					filter: brightness(105%);
+					cursor: pointer;
+					transform: scale(1.1) translateZ(0);
+					box-shadow:  3px 3px 14px #5a4141, -3px -3px 14px #bab8b8;
+				  }
+				&:active{
+				  filter: brightness(95%);
+				  box-shadow:  0px 0px 0px #7a6b6b, 0px 0px 0px #ffffff;
+				  transform: scale(0.99) translateZ(0);
+				}
+			  }
+		}
+	}
+}
