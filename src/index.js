@@ -66,6 +66,8 @@ for (let i = 0; i < keys_en_rows.length; i++) {
 function keyboardClick(data) {
     if (this.innerHTML === 'space') {
         document.getElementById('textareaId').value += ' ';
+    } else if (this.innerHTML === 'Enter') {
+        newLine();
     } else if (this.innerHTML === 'Tab') {
         document.getElementById('textareaId').value += '    ';
     } else if (this.innerHTML === 'caps') {
@@ -93,3 +95,9 @@ document.addEventListener('keydown', (keyboardPush) => {
 
 
 })
+
+
+function newLine() {
+    document.getElementById('textareaId').value += '\r\n';
+}
+
